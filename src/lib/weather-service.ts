@@ -1,8 +1,7 @@
 import { WeatherData } from "../types/weather";
 
 const SEARCH_HISTORY_KEY = "search_history";
-// Get API key from environment variables
-const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+// Variable API_KEY dihapus karena tidak digunakan
 
 export async function getWeatherByCity(
   city: string

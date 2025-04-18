@@ -1,7 +1,6 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
@@ -14,7 +13,9 @@ export function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return <div className="h-9 w-9 rounded-full backdrop-blur-md bg-white/5 border border-white/10"></div>;
+    return (
+      <div className="h-9 w-9 rounded-full backdrop-blur-md bg-white/5 border border-white/10"></div>
+    );
   }
 
   return (

@@ -1,6 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { WeatherData } from "@/types/weather";
 import { Skeleton } from "@/components/ui/skeleton";
+import Image from "next/image";
 
 interface WeatherCardProps {
   data: WeatherData | null;
@@ -48,10 +48,12 @@ export function WeatherCard({ data, isLoading }: WeatherCardProps) {
         <div className="flex items-center">
           <div className="relative">
             <div className="absolute inset-0 bg-blue-500/20 dark:bg-blue-500/10 rounded-full blur-2xl"></div>
-            <img
+            <Image
               src={iconUrl}
               alt={data.deskripsi || "Kondisi cuaca"}
-              className="h-24 w-24 md:h-32 md:w-32 relative z-10 drop-shadow-lg"
+              className="relative z-10 drop-shadow-lg"
+              width={128}
+              height={128}
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.src = "https://openweathermap.org/img/wn/01d@4x.png";
