@@ -1,9 +1,11 @@
 import { useToast } from "@/components/ui/use-toast";
 import { XCircle, AlertTriangle, Info, CheckCircle2 } from "lucide-react";
-import type { ToastActionElement } from "@/components/ui/toast";
+import { ToastActionElement } from "@/components/ui/toast";
 
+// Definisi tipe untuk toast
 type ToastType = "error" | "warning" | "info" | "success";
 
+// Interface dengan action menggunakan ToastActionElement
 interface ToastOptions {
   title?: string;
   description: string;
