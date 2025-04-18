@@ -1,12 +1,13 @@
 import { useToast } from "@/components/ui/use-toast";
 import { XCircle, AlertTriangle, Info, CheckCircle2 } from "lucide-react";
+import type { ToastActionElement } from "@/components/ui/toast";
 
 type ToastType = "error" | "warning" | "info" | "success";
 
 interface ToastOptions {
   title?: string;
   description: string;
-  action?: React.ReactElement;
+  action?: ToastActionElement;
   duration?: number;
 }
 
