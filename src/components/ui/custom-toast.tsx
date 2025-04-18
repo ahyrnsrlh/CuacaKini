@@ -54,7 +54,8 @@ export function useCustomToast() {
     const Icon = iconMap[type];
     const colors = colorMap[type];
 
-    return toast({
+    // Buat parameter untuk toast tanpa action dulu
+    const toastParams = {
       title: options.title,
       description: (
         <div className="flex items-start">
@@ -64,10 +65,20 @@ export function useCustomToast() {
           <span>{options.description}</span>
         </div>
       ),
-      action: options.action,
       className: `${colors.background} backdrop-blur-md border ${colors.border} ${colors.shadow}`,
       duration: options.duration || 5000,
-    });
+    };
+
+    // Tambahkan action jika ada
+    if (options.action) {
+      return toast({
+        ...toastParams,
+        action: options.action,
+      });
+    }
+
+    // Jika tidak ada action
+    return toast(toastParams);
   };
 
   return {

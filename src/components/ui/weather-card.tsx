@@ -62,7 +62,7 @@ export function WeatherCard({ data, isLoading }: WeatherCardProps) {
           </div>
           <div className="text-center">
             <span className="text-5xl md:text-6xl font-bold text-white drop-shadow-md">
-              {Math.round(data.suhu ?? 0)}°
+              {data.suhu !== undefined ? Math.round(data.suhu) : 0}°
             </span>
             <span className="text-lg text-blue-200/80 pl-1">C</span>
           </div>
